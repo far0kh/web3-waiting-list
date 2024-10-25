@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         </div> */}
         <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/">Tezuka</Link>
+          <Link href="https://www.tezuka.xyz/">Tezuka</Link>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
         </div>

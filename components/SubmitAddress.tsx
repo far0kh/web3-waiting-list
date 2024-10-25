@@ -166,7 +166,7 @@ export function SubmitAddress(props: Props) {
           <Button
             type="submit"
             size='lg'
-            className="text-white bg-orange-500 hover:bg-orange-600 rounded text-lg font-semibold w-[133px] h-[46px] mx-2"
+            className="text-white bg-green-600 hover:bg-green-700 rounded text-lg font-semibold w-[133px] h-[46px] mx-2"
           >
             {isLoading ? (<Icons.spinner className='size-4.5 animate-spin' />) :
               address ? 'Update' : 'Submit'}

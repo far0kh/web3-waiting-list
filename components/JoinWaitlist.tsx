@@ -33,7 +33,7 @@ const JoinWaitlist = (props: Props) => {
               <SignUpButton>
                 <Button
                   size='lg'
-                  className="text-white bg-orange-500 hover:bg-orange-600 rounded text-lg font-semibold"
+                  className="text-white bg-green-600 hover:bg-green-700 rounded text-lg font-semibold"
                 >
                   Start
                 </Button>
@@ -42,7 +42,7 @@ const JoinWaitlist = (props: Props) => {
             <SignedIn>
               <Button
                 size='lg'
-                className="text-white bg-orange-500 hover:bg-orange-600 rounded text-lg font-semibold"
+                className="text-white bg-green-600 hover:bg-green-700 rounded text-lg font-semibold"
               >
                 Start
               </Button>

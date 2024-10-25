@@ -13,15 +13,15 @@ export default function Header() {
             <span className="hidden md:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tezuka</span>
           </Link>
           <Link href="/" className="flex items-center space-x-1 rtl:space-x-reverse">
-            <span className="self-center text-xl font-semibold whitespace-nowrap hover:text-orange-600 dark:hover:text-orange-600 mt-1 border-b-2 border-orange-600">Waitlist</span>
+            <span className="self-center text-xl font-semibold whitespace-nowrap hover:text-green-600 dark:hover:text-green-600 mt-1 border-b-2 border-green-600">Waitlist</span>
           </Link>
         </div>
         <div className='flex items-center justify-between gap-4'>
           <SignedOut>
             <SignUpButton>
               <Button
-                size='sm'
-                className="text-white bg-orange-500 hover:bg-orange-600 rounded"
+                size='lg'
+                className="text-white bg-green-600 hover:bg-green-700 rounded"
               >Join Waitlist</Button>
             </SignUpButton>
           </SignedOut>
