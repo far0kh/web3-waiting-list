@@ -1,19 +1,24 @@
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server';
+import JoinWaitlist from "@/components/JoinWaitlist";
+import WelcomeWaitlist from '@/components/WelcomeWaitlist';
 
-export default function Home() {
+type SearchParams = Promise<{ [key: string]: string | undefined }>
+
+export default async function Home(props: {
+  searchParams: SearchParams
+}) {
+  const searchParams = await props.searchParams;
+  const invitedBy = searchParams?.r || "";
+
+  const { userId } = await auth()
+
+  if (!userId) {
+    return (
+      <JoinWaitlist invitedBy={invitedBy} />
+    );
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </div>
+    <WelcomeWaitlist />
   );
 }

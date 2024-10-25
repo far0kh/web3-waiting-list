@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,6 +16,12 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const jetbrains = localFont({
+  src: "./fonts/JetBrainsMono-Regular.woff2",
+  variable: "--font-code",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: {
@@ -78,9 +87,16 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
+      <html
+        lang='en'
+        className='dark flex min-h-screen flex-col scroll-smooth'
+        suppressHydrationWarning
+      >
+        <body className={`flex flex-col min-h-screen min-w-fit md:min-w-full ${geistSans.variable} ${geistMono.variable} ${jetbrains.variable} antialiased`}>
+          <Header />
+          <main className='flex max-w-full mx-auto my-auto'>{children}</main>
+          <Toaster />
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
