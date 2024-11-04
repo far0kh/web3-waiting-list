@@ -55,7 +55,6 @@ export default function SignUpPage() {
                           </Button>
                         </Clerk.Connection>
                       </div>
-                      <div id="clerk-captcha" />
                     </CardContent>
                     <CardFooter>
                       <div className='grid w-full gap-y-4'>
