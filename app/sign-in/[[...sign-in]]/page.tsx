@@ -66,6 +66,7 @@ export default function SignInPage() {
                         <Input />
                       </Clerk.Input>
                       <Clerk.FieldError className='block text-sm text-destructive' />
+                      <div id="clerk-captcha" />
                     </Clerk.Field>
                   </CardContent>
                   <CardFooter>
